@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(16, 185, 129, 0.16), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(56, 189, 248, 0.08), transparent);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight text-zinc-50;
+  }
+
+  ::selection {
+    @apply bg-emerald-400/30 text-white;
+  }
+}
+
+@layer components {
+  .page {
+    @apply mx-auto w-full max-w-6xl px-4 py-8 sm:px-6;
+  }
+
+  .page-narrow {
+    @apply mx-auto w-full max-w-xl px-4 py-10 sm:px-6;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-zinc-900/80 p-5 shadow-xl shadow-black/30 backdrop-blur;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-400;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-zinc-950 px-3 py-2.5 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-emerald-400 text-zinc-950 hover:bg-emerald-300;
+  }
+
+  .btn-sky {
+    @apply btn bg-sky-400 text-zinc-950 hover:bg-sky-300;
+  }
+
+  .btn-amber {
+    @apply btn bg-amber-300 text-zinc-950 hover:bg-amber-200;
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/15 bg-white/5 text-zinc-100 hover:bg-white/10;
+  }
+
+  .btn-danger {
+    @apply btn border border-rose-400/40 text-rose-300 hover:bg-rose-500/10;
+  }
+
+  .alert-error {
+    @apply rounded-xl border border-rose-400/30 bg-rose-500/10 px-3 py-2 text-sm text-rose-100;
+  }
+
+  .alert-ok {
+    @apply rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-100;
+  }
+
+  .alert-warn {
+    @apply rounded-xl border border-amber-400/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-100;
+  }
+
+  .alert-info {
+    @apply rounded-xl border border-sky-400/30 bg-sky-500/10 px-3 py-2 text-sm text-sky-100;
+  }
+
+  .stat {
+    @apply rounded-2xl border border-white/10 bg-zinc-900/70 p-4 text-center;
+  }
+
+  .spinner {
+    @apply inline-block h-8 w-8 animate-spin rounded-full border-2 border-emerald-400/20 border-t-emerald-400;
+  }
+}
